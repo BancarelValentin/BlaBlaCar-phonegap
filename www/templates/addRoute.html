@@ -1,0 +1,31 @@
+<ion-view view-title="New route">
+    <ion-header-bar>
+        <h1 class="title">Create a new route</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeAddRoute()">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <form ng-submit="addRoute()">
+                <div class="list">
+                    <label class="item item-input">
+                        <i class="icon ion-arrow-up-c placeholder-icon"></i>
+                        <input type="text" placeholder="from" ng-model="addRouteData.from">
+                    </label>
+                    <label class="item item-input">
+                        <i class="icon ion-arrow-down-c placeholder-icon"></i>
+                        <input type="text" placeholder="to" ng-model="addRouteData.to">
+                    </label>
+                    <label class="item item-input">
+                        <i class="icon ion-calendar placeholder-icon"></i>
+                        <input type="date" placeholder="on" ng-model="addRouteData.on">
+                    </label>
+                    <label class="item">
+                        <button class="button button-block button-balanced" type="submit">Create</button>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>

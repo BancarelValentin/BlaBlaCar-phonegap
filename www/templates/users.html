@@ -1,0 +1,20 @@
+<ion-view view-title="Users">
+  <ion-content>
+    <ion-list>
+        <div class="item item-divider">
+         All users
+        </div>
+        <div class="card" ng-repeat="user in users" style="text-align: center;">
+          <div class="item item-text-wrap">
+              Login: {{user.login}}
+              Password: {{user.pass}}
+              Bookings: {{user.bookings}}
+          </div>
+         </div>
+
+          <ion-item ng-if="users.length == 0">
+            No users
+          </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

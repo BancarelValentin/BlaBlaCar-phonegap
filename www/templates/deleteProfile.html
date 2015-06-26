@@ -1,0 +1,26 @@
+<ion-modal-view view-title="Delete your profile">
+    <ion-header-bar>
+        <h1 class="title">Delete your profile</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeDeleteProfile()">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-header-bar>
+        <h1 class="title">Delete profile</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeDeleteProfile()">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+
+        <h2>Please confirm</h2>
+        <p class="assertive">Are you sure that you want to delete your profile, this cannot be undo.</p>
+        <form ng-submit="deleteProfile()">
+            <label class="item">
+                <button class="button button-block button-assertive" type="submit">Delete</button>
+            </label>
+        </form>
+
+
+    </ion-content>
+</ion-modal-view>

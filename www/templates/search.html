@@ -1,0 +1,41 @@
+<ion-view view-title="Search">
+    <ion-content>
+        <div class="bar bar-header item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input type="search" placeholder="From" ng-model="searchInputFrom">
+            </label>
+            &nbsp
+            <label class="item-input-wrapper">
+                <i class="icon ion-ios-search placeholder-icon"></i>
+                <input type="search" placeholder="to" ng-model="searchInputTo">
+            </label>
+        </div>
+        <div class="bar bar-header item-input-inset">
+            <label class="item-input-wrapper">
+                <i class="icon ion-calendar placeholder-icon"></i>
+                <input type="date" placeholder="on" ng-model="searchInputDate">
+            </label>
+        </div>
+
+
+
+        <div class="card" ng-repeat="route in routes | filter: {from:searchInputFrom, to:searchInputTo, date:searchInputDate}">
+            <div class="item item-text-wrap">
+                <!-- {{route.id}} - {{route.driverId}} -->
+                <br/> From {{route.from}}, to {{route.to}}
+                <br/> on {{route.date | date:'yyyy-MM-dd HH:mm:ss'}}
+                <br/> driven by {{users[route.driverId].login}}
+            </div>
+            <br/>
+            <button class="button button-outline button-balanced center" ng-click="book({{route.id}});">
+                Book
+            </button>
+        </div>
+
+
+        <ion-item ng-if="routes.length == 0">
+            No routes
+        </ion-item>
+    </ion-content>
+</ion-view>

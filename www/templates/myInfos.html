@@ -1,0 +1,48 @@
+<ion-view view-title="Routes">
+  <ion-content>
+    <ion-list>
+      <div class="item item-divider">
+      Your bookings
+      </div>
+      <div class="card" ng-repeat="route in routesBookedForUserWithId(currentUserId)" style="text-align: center;">
+    	  <div class="item item-text-wrap">
+          <!-- {{route.id}} - {{route.driverId}}<br/> -->
+            From {{route.from}}, to {{route.to}} <br/>
+            on {{route.date}}<br/>
+            driven by {{users[route.driverId].login}}
+    	  </div>
+        <br/>
+        <button class="button button-outline button-assertive" ng-click="deleteBookWithRouteNumber({{route.id}});">
+          Unbook
+        </button>
+  	   </div>
+
+        <ion-item ng-if="routesBookedForUserWithId(currentUserId) == 0">
+        	No booking
+        </ion-item>
+
+
+
+
+        <div class="item item-divider">
+         Your routes
+        </div>
+        <div class="card" ng-repeat="route in routesCreatedByUserWithId(currentUserId)" style="text-align: center;">
+          <div class="item item-text-wrap">
+          <!-- {{route.id}} - {{route.driverId}}<br/> -->
+              From {{route.from}}, to {{route.to}} <br/>
+              on {{route.date}}<br/>
+              driven by {{users[route.driverId].login}}
+          </div>
+            <br/>
+            <button class="button button-outline button-assertive" ng-click="deleteRouteNumber({{route.id}});">
+              Delete
+            </button>
+         </div>
+
+          <ion-item ng-if="routesCreatedByUserWithId(currentUserId) == 0">
+            No routes
+          </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

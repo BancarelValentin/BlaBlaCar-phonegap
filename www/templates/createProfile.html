@@ -1,0 +1,27 @@
+<ion-view view-title="Create a profile">
+    <ion-header-bar>
+        <h1 class="title">Create a profile</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="closeCreateProfile()">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <form ng-submit="createProfile()">
+                <div class="list">
+                    <label class="item item-input">
+                        <span class="input-label">Username</span>
+                        <input type="text" ng-model="createProfileData.login">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Password</span>
+                        <input type="password" ng-model="createProfileData.pass">
+                    </label>
+                    <label class="item">
+                        <button class="button button-block button-balanced" type="submit">Create</button>
+                    </label>
+                </div>
+            </form>
+        </div>
+    </ion-content>
+</ion-view>
