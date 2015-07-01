@@ -70,6 +70,7 @@ angular.module('starter.controllers', [])
                 pass: $scope.createProfileData.pass,
                 bookings: []
             });
+            $scope.currentUserId = $scope.users.length - 1;
             console.log("After: " + $scope.users.length);
             $scope.closeCreateProfile();
         };
@@ -120,6 +121,7 @@ angular.module('starter.controllers', [])
             for (var i = $scope.users.length - 1; i >= 0; i--) {
                 if ($scope.users[i].id == $scope.currentUserId) {
                     $scope.users.splice(i, 1);
+                    $scope.currentUserId = $scope.users[1].id;
                 }
             }
             console.log("After: " + $scope.users.length);
